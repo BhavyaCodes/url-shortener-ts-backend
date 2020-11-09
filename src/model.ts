@@ -14,7 +14,7 @@ export const UrlSchema = new Schema({
   short: {
     required: true,
     type: String,
-    default: shortid.generate(),
+    default: shortid.generate,
   },
 });
 
