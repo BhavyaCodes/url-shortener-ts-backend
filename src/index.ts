@@ -8,7 +8,11 @@ import express, { Request, Response, NextFunction, json } from "express";
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [process.env.CLIENT_URL!, "http://localhost:3000"],
+  })
+);
 app.use(json());
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   res.json({ hi: "There" });
